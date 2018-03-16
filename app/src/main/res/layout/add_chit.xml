@@ -87,8 +87,10 @@
         android:hint="Select Date"
         android:focusable="false"
         android:ems="10"
+        android:hint="Date Picker"
         android:inputType="date"
         android:padding="5dp"
+        android:textAlignment="center"
         android:textSize="20sp" />
 
     <Button
