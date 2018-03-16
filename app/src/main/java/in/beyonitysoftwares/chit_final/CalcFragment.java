@@ -26,7 +26,7 @@ public class CalcFragment extends Fragment {
     private Spinner spinner1;
     TextView answer, spinnerText;
     EditText editNum;
-    String[] amoutns = {"₹ \t 50000", "₹ \t 75000", "₹ \t 100000", "₹ \t 200000", "₹ \t 300000", "₹ \t 400000"};
+    String[] amounts = {"₹ \t 50000", "₹ \t 75000", "₹ \t 100000", "₹ \t 200000", "₹ \t 300000", "₹ \t 400000"};
 
     public CalcFragment() {
         // Required empty public constructor
@@ -37,10 +37,10 @@ public class CalcFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calc, container, false);
+
         answer = (TextView) (R.id.answer);
         spinnerText = (TextView) findViewById(R.id.spinnerText);
-        ArrayAdapter ad = new ArrayAdapter(this, R.layout.spinner_text, amoutns);
+        ArrayAdapter ad = new ArrayAdapter(this, R.layout.spinner_text, amounts);
         ad.setDropDownViewResource(R.layout.spinner_text);
         spinner1 = (Spinner) findViewById(R.id.chitAmount);
         spinner1.setAdapter(ad);
@@ -72,6 +72,7 @@ public class CalcFragment extends Fragment {
 
         });
 
+        return inflater.inflate(R.layout.fragment_calc, container, false);
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -101,6 +102,7 @@ public class CalcFragment extends Fragment {
 
 
 //get the selected dropdown list value
+
 }
 
 }
