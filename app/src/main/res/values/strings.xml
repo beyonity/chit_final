@@ -5,6 +5,14 @@
     <string name="title_calculations">கணிப்பபொறி</string>
     <string name="payable">க வே</string>
     <string name="auction"> ஏலம்</string>
+    <string name="save"> செமி</string>
+    <string name="fifty">50 ஆயிரம்</string>
+    <string name="seventyfive">75 ஆயிரம்</string>
+    <string name="onelakh">1 லட்சம்</string>
+    <string name="twolakh">2 லட்சம்</string>
+    <string name="threeolakh">3 லட்சம்</string>
+    <string name="fourlakh">4 லட்சம்</string>
+    <string name="addppl">ஆட்களை சேர்க்க</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
