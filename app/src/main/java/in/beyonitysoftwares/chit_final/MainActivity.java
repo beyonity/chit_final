@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import in.beyonitysoftwares.chit_final.pageAdapters.FragmentPageAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    ViewPager vp = (ViewPager) findViewById(R.id.vp);
+    ViewPager vp;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -60,9 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-            if (position==0) {
-                navigation.setSelected(0);
-            }
+                if (position==0) {
+                    navigation.setSelectedItemId(R.id.navigation_home);
+                }else if(position == 1){
+                    navigation.setSelectedItemId(R.id.navigation_dashboard);
+                }else if (position == 2){
+                    navigation.setSelectedItemId(R.id.navigation_notifications);
+                }
             }
 
             @Override
