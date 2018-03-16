@@ -3,6 +3,8 @@
     <string name="title_calc">கணக்கீடு</string>
     <string name="title_list">சீட்டு</string>
     <string name="title_calculations">கணிப்பபொறி</string>
+    <string name="payable">கொ வே</string>
+    <string name="auction"> ஏலம்</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
