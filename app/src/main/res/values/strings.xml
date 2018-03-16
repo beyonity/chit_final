@@ -13,6 +13,30 @@
     <string name="threeolakh">3 லட்சம்</string>
     <string name="fourlakh">4 லட்சம்</string>
     <string name="addppl">ஆட்களை சேர்க்க</string>
+    <string name="one">8</string>
+    <string name="two">8</string>
+    <string name="three">8</string>
+    <string name="four">8</string>
+    <string name="five">8</string>
+    <string name="six">8</string>
+    <string name="seven">8</string>
+    <string name="eight">8</string>
+    <string name="nine">8</string>
+    <string name="zero">8</string>
+    <string name="AC">8</string>
+    <string name="percent">%</string>
+    <string name="div">/</string>
+    <string name="mult">X</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="equal">=</string>
+
+
+
+
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
