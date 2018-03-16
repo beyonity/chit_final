@@ -37,28 +37,29 @@ public class CalcFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_calc, container, false);
+        answer = (TextView) view.findViewById(R.id.answer);
+        spinnerText = (TextView) view.findViewById(R.id.spinnerText);
+        ArrayAdapter ad = new ArrayAdapter(getContext(), R.layout.spinner_text, amounts);
 
-        answer = (TextView) (R.id.answer);
-        spinnerText = (TextView) findViewById(R.id.spinnerText);
-        ArrayAdapter ad = new ArrayAdapter(this, R.layout.spinner_text, amounts);
         ad.setDropDownViewResource(R.layout.spinner_text);
-        spinner1 = (Spinner) findViewById(R.id.chitAmount);
+        spinner1 = (Spinner) view.findViewById(R.id.chitAmount);
         spinner1.setAdapter(ad);
 
-        editNum = (EditText) findViewById(R.id.editnum);
+        editNum = (EditText) view.findViewById(R.id.editnum);
         editNum.setText("0");
         editNum.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                     InputMethodManager inputManager = (InputMethodManager)
-                            getSystemService(Context.INPUT_METHOD_SERVICE);
+                            getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                    inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                    inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
                     String value = spinner1.getSelectedItem().toString();
                     value = value.replace("₹ \t ", "");
-                    Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), value, Toast.LENGTH_SHORT).show();
                     Double chitAmount = Double.parseDouble(value);
                     Double input = Double.parseDouble(editNum.getText().toString());
                     if (!(input == 0)) {
@@ -72,14 +73,14 @@ public class CalcFragment extends Fragment {
 
         });
 
-        return inflater.inflate(R.layout.fragment_calc, container, false);
+
 
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = spinner1.getSelectedItem().toString();
                 value = value.replace("₹ \t ", "");
-                Toast.makeText(getApplicationContext(), value, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), value, Toast.LENGTH_SHORT).show();
                 Double chitAmount = Double.parseDouble(value);
                 Double input = Double.parseDouble(editNum.getText().toString());
                 if (!(input == 0)) {
@@ -93,10 +94,8 @@ public class CalcFragment extends Fragment {
 
             }
         });
+        return view;
 
-
-    } catch (Exception e) {
-        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_LONG).show();
     }
 //add items into spinner dynamically
 
@@ -105,4 +104,3 @@ public class CalcFragment extends Fragment {
 
 }
 
-}
