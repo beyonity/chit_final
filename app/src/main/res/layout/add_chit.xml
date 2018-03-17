@@ -87,7 +87,7 @@
         android:hint="Select Date"
         android:focusable="false"
         android:ems="10"
-        android:hint="Date Picker"
+
         android:inputType="date"
         android:padding="5dp"
         android:textAlignment="center"
@@ -114,5 +114,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/addedmemeberslist"></ListView>
+            android:id="@+id/addedmemeberslist">
+
+        </ListView>
 </LinearLayout>
