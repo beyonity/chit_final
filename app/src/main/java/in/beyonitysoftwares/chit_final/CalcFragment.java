@@ -27,6 +27,7 @@ public class CalcFragment extends Fragment {
     TextView answer, spinnerText;
     EditText editNum;
     String[] amounts = {"₹ \t 50000", "₹ \t 75000", "₹ \t 100000", "₹ \t 200000", "₹ \t 300000", "₹ \t 400000"};
+    TextView ch, el, pa;
 
     public CalcFragment() {
         // Required empty public constructor
@@ -38,6 +39,10 @@ public class CalcFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_calc, container, false);
+        ch= (TextView) view.findViewById(R.id.chittxt);
+        el= (TextView) view.findViewById(R.id.elam);
+        pa= (TextView) view.findViewById(R.id.payable) ;
+
         answer = (TextView) view.findViewById(R.id.answer);
         spinnerText = (TextView) view.findViewById(R.id.spinnerText);
         ArrayAdapter ad = new ArrayAdapter(getContext(), R.layout.spinner_text, amounts);
@@ -48,6 +53,7 @@ public class CalcFragment extends Fragment {
 
         editNum = (EditText) view.findViewById(R.id.editnum);
         editNum.setText("0");
+
         editNum.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -62,6 +68,7 @@ public class CalcFragment extends Fragment {
                     Toast.makeText(getContext(), value, Toast.LENGTH_SHORT).show();
                     Double chitAmount = Double.parseDouble(value);
                     Double input = Double.parseDouble(editNum.getText().toString());
+                    el.setText(editNum.getText());
                     if (!(input == 0)) {
                         Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 20;
                         answer.setText(String.valueOf(output));
@@ -80,12 +87,14 @@ public class CalcFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = spinner1.getSelectedItem().toString();
                 value = value.replace("₹ \t ", "");
+                ch.setText(value);
                 Toast.makeText(getContext(), value, Toast.LENGTH_SHORT).show();
                 Double chitAmount = Double.parseDouble(value);
                 Double input = Double.parseDouble(editNum.getText().toString());
                 if (!(input == 0)) {
                     Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 20;
                     answer.setText(String.valueOf(output));
+                    pa.setText(String.valueOf(output));
                 }
             }
 
@@ -97,6 +106,9 @@ public class CalcFragment extends Fragment {
         return view;
 
     }
+
+
+
 //add items into spinner dynamically
 
 
