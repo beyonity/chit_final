@@ -70,7 +70,8 @@ public class CalcFragment extends Fragment {
                     Double input = Double.parseDouble(editNum.getText().toString());
                     el.setText(editNum.getText());
                     if (!(input == 0)) {
-                        Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 20;
+                        //Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 20;
+                        Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 12;
                         answer.setText(String.valueOf(output));
                     }
 
@@ -92,7 +93,7 @@ public class CalcFragment extends Fragment {
                 Double chitAmount = Double.parseDouble(value);
                 Double input = Double.parseDouble(editNum.getText().toString());
                 if (!(input == 0)) {
-                    Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 20;
+                    Double output = (((chitAmount * 3) / 100 + chitAmount) - input) / 12;
                     answer.setText(String.valueOf(output));
                     pa.setText(String.valueOf(output));
                 }
