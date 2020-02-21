@@ -1,4 +1,4 @@
-package in.beyonitysoftwares.chit_final.pageAdapters;
+package in.beyonitysoftwares.chit_final_12.pageAdapters;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

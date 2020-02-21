@@ -1,4 +1,4 @@
-package in.beyonitysoftwares.chit_final;
+package in.beyonitysoftwares.chit_final_12;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 
 
-import in.beyonitysoftwares.chit_final.pageAdapters.FragmentPageAdapter;
+import in.beyonitysoftwares.chit_final_12.pageAdapters.FragmentPageAdapter;
 
 public class MainActivity extends AppCompatActivity {
     ViewPager vp;

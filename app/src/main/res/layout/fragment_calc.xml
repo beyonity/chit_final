@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
@@ -161,6 +164,19 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
 </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/bluelight"
+        android:background="@android:color/transparent"
+        android:id="@+id/share"
+        android:src="@android:drawable/ic_menu_share"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10px"
+        android:layout_alignParentRight="true">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</RelativeLayout>

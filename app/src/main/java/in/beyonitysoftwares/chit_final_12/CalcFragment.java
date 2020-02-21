@@ -1,7 +1,8 @@
-package in.beyonitysoftwares.chit_final;
+package in.beyonitysoftwares.chit_final_12;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.KeyEvent;
@@ -12,10 +13,13 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 /**
@@ -28,6 +32,7 @@ public class CalcFragment extends Fragment {
     EditText editNum;
     String[] amounts = {"₹ \t 50000", "₹ \t 75000", "₹ \t 100000", "₹ \t 200000", "₹ \t 300000", "₹ \t 400000"};
     TextView ch, el, pa;
+    FloatingActionButton share;
 
     public CalcFragment() {
         // Required empty public constructor
@@ -42,7 +47,7 @@ public class CalcFragment extends Fragment {
         ch= (TextView) view.findViewById(R.id.chittxt);
         el= (TextView) view.findViewById(R.id.elam);
         pa= (TextView) view.findViewById(R.id.payable) ;
-
+        share = (FloatingActionButton) view.findViewById(R.id.share);
         answer = (TextView) view.findViewById(R.id.answer);
         spinnerText = (TextView) view.findViewById(R.id.spinnerText);
         ArrayAdapter ad = new ArrayAdapter(getContext(), R.layout.spinner_text, amounts);
@@ -102,6 +107,19 @@ public class CalcFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
             }
         });
         return view;
