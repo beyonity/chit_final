@@ -38,7 +38,7 @@ public class CalcFragment extends Fragment {
     private Spinner spinner1;
     TextView answer, spinnerText;
     EditText editNum;
-    String[] amounts = {"₹ \t 50000", "₹ \t 75000", "₹ \t 100000", "₹ \t 200000", "₹ \t 300000", "₹ \t 400000"};
+    String[] amounts = {"₹ \t 50000", "₹ \t 75000", "₹ \t 100000", "₹ \t 200000", "₹ \t 300000", "₹ \t 400000","₹ \t 500000"};
     TextView ch, el, pa;
     FloatingActionButton share;
     DecimalFormat df2 = new DecimalFormat("#.##");
